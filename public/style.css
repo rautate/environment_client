@@ -1,3 +1,8 @@
+#mount-point{
+    background-color: #13ACD8;
+    color: lightcyan;
+    min-height: 450px;
+}
 
 /* Navigation*/
 .nav-list {
@@ -12,11 +17,12 @@
 
 .nav-list-item a{
     padding: 10px;
-    color: black;
+    color: lightcyan;
     font-size: 30px;
 }
 .nav-list-item a:hover {
     text-decoration: none;
+    color: darkcyan;
 }
 
 /*End Navigation */
@@ -24,23 +30,23 @@
 
 /* DATA GRID */
 .panel-actual{
-    border: 1px solid lightgrey;
+    border: 1px solid lightcyan;
     border-radius: 10px;
     margin-left: 6%;
 }
 
 .t-letter{
-    font-size: 36px;
+    font-size: 40px;
 }
 
 .temp-value{
     font-size: 90px;
-    color: darkorange;
+    color: lightcyan;
     text-align: center;
 }
 
 .humidity{
-    font-size: 36px;
+    font-size: 30px;
     margin-top: 10px;
 }
 
@@ -48,6 +54,14 @@
     font-size: 24px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.text-xl{
+    font-size: 36px;
+}
+
+.text-xxs{
+    font-size: 50%;
 }
 /* END DATA GRID */
 .rag-container{
