@@ -1,13 +1,20 @@
+body{
+    font-size: 30px;
+}
+
 #mount-point{
-    background-color: #13ACD8;
+    background-color: #13ACF7;
     color: lightcyan;
-    min-height: 450px;
+    min-height: 410px;
 }
 
 /* Navigation*/
 .nav-list {
     list-style: none;
     padding-top: 10px;
+    padding-left: 10px;
+    margin: 0px;
+    font-size: 85%;
 }
 
 .nav-list-item {
@@ -18,7 +25,7 @@
 .nav-list-item a{
     padding: 10px;
     color: lightcyan;
-    font-size: 30px;
+    font-size: 100%;
 }
 .nav-list-item a:hover {
     text-decoration: none;
@@ -36,54 +43,60 @@
 }
 
 .t-letter{
-    font-size: 40px;
+    font-size: 100%;
 }
 
 .temp-value{
-    font-size: 90px;
-    color: lightcyan;
+    font-size: 200%;
     text-align: center;
 }
 
 .humidity{
-    font-size: 30px;
+    font-size: 94%;
     margin-top: 10px;
 }
 
 .pressure{
-    font-size: 24px;
+    font-size: 75%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .text-xl{
-    font-size: 36px;
+    font-size: 87%;
 }
 
 .text-xxs{
     font-size: 50%;
 }
+
+.p-gas{
+    text-align: center;
+    margin: 0;
+}
+
+.gas-values{
+    margin: 0;
+    font-size: 90%;
+}
 /* END DATA GRID */
-.rag-container{
-    height: 20px;
-    width: 100%;
+
+
+/* COMMON CLASSES */
+.good{
+    color: lawngreen;
 }
 
-.rag-bar {
-    height: 100%;
-    width: 100%;
-    background: -moz-linear-gradient(left, #31ce29 0%, #e0a92a 47%, #e0a92a 47%, #e0a92a 48%, #e08823 53%, #e08823 53%, #e08823 54%, #e52f22 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #31ce29 0%, #e0a92a 47%, #e0a92a 47%, #e0a92a 48%, #e08823 53%, #e08823 53%, #e08823 54%, #e52f22 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #31ce29 0%, #e0a92a 47%, #e0a92a 47%, #e0a92a 48%, #e08823 53%, #e08823 53%, #e08823 54%, #e52f22 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31ce29', endColorstr='#e52f22', GradientType=1); /* IE6-9 */
+.neutral{
+    color: lightcyan;
 }
 
-.rag-bar-handler{
-    position: absolute;
-    height: 26px;
-    background: black;
-    width: 5px;
-    top: 79%;
-    -webkit-transition: left 2s;
+.yellow{
+    color: yellow;
 }
 
+.danger{
+    color: coral;
+}
+
+/* END COMMON CLASSES */
