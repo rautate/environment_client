@@ -5,7 +5,7 @@ body{
 #mount-point{
     background-color: #13ACF7;
     color: lightcyan;
-    min-height: 410px;
+    min-height: 400px;
 }
 
 /* Navigation*/
@@ -39,7 +39,6 @@ body{
 .panel-actual{
     border: 1px solid lightcyan;
     border-radius: 10px;
-    margin-left: 6%;
 }
 
 .t-letter{
@@ -62,22 +61,14 @@ body{
     margin-bottom: 10px;
 }
 
-.text-xl{
-    font-size: 87%;
-}
-
-.text-xxs{
-    font-size: 50%;
-}
-
 .p-gas{
-    text-align: center;
     margin: 0;
 }
 
 .gas-values{
     margin: 0;
     font-size: 90%;
+    text-align: right;
 }
 /* END DATA GRID */
 
@@ -96,7 +87,27 @@ body{
 }
 
 .danger{
-    color: coral;
+    color: #dc3545;
 }
 
+
+.text-xl{
+    font-size: 87%;
+}
+
+.text-xs{
+    font-size: 60%;
+}
+
+.text-xxs{
+    font-size: 50%;
+}
+
+.b-right{
+    border-right: 1px solid lightcyan;
+}
+
+.b-top{
+    border-top: 1px solid lightcyan;
+}
 /* END COMMON CLASSES */
