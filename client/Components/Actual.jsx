@@ -10,7 +10,8 @@ var createReactClass = require('create-react-class');
 const Actual = createReactClass({
     getInitialState: function () {
         return{
-            data: ''
+            data: '',
+            tempTextClass: ''
         }
     },
     componentWillMount() {
@@ -21,25 +22,55 @@ const Actual = createReactClass({
     componentWillUnmount() {
         clearInterval(this.state.intervalID);
     },
-    computeClass: function(val) {
+    computeTempClass: function(temp) {
         return classNames({
-            'temp-value': true,
-            'neutral': val <= 5,
-            'danger': val >= 35,
-            'yellow': val > 5 && val < 35
+            "temp-value": true,
+            "neutral": temp === "cold",
+            "danger": temp === "hot",
+            "yellow": temp === "normal"
+        });
+    },
+    computeCOClass: function(co) {
+        return classNames({
+            "gas-values": true,
+            "good": co === "normal",
+            "neutral": co === "low warning",
+            "danger": co === "danger",
+            "yellow": co === "warning"
+        });
+    },
+    computeFormalClass: function(formal) {
+        return classNames({
+            "gas-values": true,
+            "good": formal === "normal",
+            "danger": formal === "danger",
+            "yellow": formal === "warning"
+        });
+    },
+    computePMClass: function(pm) {
+        return classNames({
+            "good": pm === "normal",
+            "danger": pm === "danger",
+            "yellow": pm === "warning"
         });
     },
     updateData: function(){
         axios.get(`${apiPrefix}/actual`)
             .then( response => {
                 this.setState({data: response.data[0]});
-                var tempTextClass = this.computeClass(this.state.data.Temperature);
+                let tempTextClass = {
+                    "temperature": this.computeTempClass(this.state.data.Temperature_status),
+                    "co": this.computeCOClass(this.state.data.CO2_status),
+                    "formal": this.computeFormalClass(this.state.data.Formaldehyde_status),
+                    "pm2": this.computePMClass(this.state.data.PM2_5_status),
+                    "pm10": this.computePMClass(this.state.data.PM10_status)
+                };
                 this.setState({tempTextClass: tempTextClass});
             })
     },
     render(){
         return(
-            <DataGrid data={this.state.data} tempClass={this.state.tempTextClass} />
+            <DataGrid data={this.state.data} textClasses={this.state.tempTextClass} />
         );
     }
 });
